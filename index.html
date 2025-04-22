@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensajes Ultra Creativos</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <canvas id="tsparticles"></canvas>
+  <div class="card">
+    <div class="header">
+      <div class="title">¡Hola, ñiña!</div>
+    </div>
+    <progress id="barra" value="0" max="100"></progress>
+    <div id="frase">Pulsa el botón para tu dosis de buena vibra ✨</div>
+    <div class="buttons">
+      <button id="nextBtn">Siguiente</button>
+    </div>
+  </div>
+
+  <script>
+    // Partículas de fondo
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      interactivity: { events: { onHover: { enable: false }, onClick: { enable: false } } },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: { min: 1, max: 3 } },
+        move: { enable: true, speed: 1, outModes: "out" }
+      },
+      detectRetina: true
+    });
+
+    const frases = [
+      '<strong style="color:#03A9F4;">Eres complicada</strong>, pero muy <strong style="color:#E91E63;">tierna</strong> 😄.',
+      'Un tanto <strong style="color:#FF9800;">loca</strong> pero <strong style="color:#4CAF50;">única</strong> e <strong style="color:#3F51B5;">inteligente</strong> 🧠.',
+      'A veces <strong style="color:#9C27B0;">fría</strong>, a veces <strong style="color:#E91E63;">fuerte</strong> 💪 y a veces <strong style="color:#F44336;">rota</strong> 💔.',
+      'Demasiado <strong style="color:#009688;">distraída</strong> 🙃, pero a la vez <strong style="color:#FF5722;">hermosa</strong> ✨.',
+      'Una mujer como para dedicarle no solo <strong style="color:#673AB7;">canciones</strong>, sino también <strong style="color:#00BCD4;">toda una vida</strong> 🌍.',
+      'Tú no lo sabes, pero siempre que me acuerdo de ti, digo: <em>"Espero que esté bien y con una sonrisita 😊"</em>.',
+      '¡Y si llegaste hasta aquí, es porque eres simplemente eres una gran personita <strong>TQM ñiña</strong>! 🌟'
+    ];
+    let idx = -1;
+    const fraseEl = document.getElementById('frase');
+    const barra   = document.getElementById('barra');
+    const nextBtn = document.getElementById('nextBtn');
+
+    nextBtn.addEventListener('click', () => {
+      idx++;
+      confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
+
+      fraseEl.style.opacity = 0;
+      setTimeout(() => {
+        fraseEl.innerHTML = frases[idx];
+        fraseEl.style.opacity = 1;
+      }, 300);
+
+      barra.value = ((idx + 1) / frases.length) * 100;
+
+      if (idx >= frases.length - 1) {
+        nextBtn.disabled = true;
+        nextBtn.innerText = '¡Listo!';
+        nextBtn.style.opacity = '0.6';
+        nextBtn.style.cursor = 'default';
+      }
+    });
+  </script>
+</body>
+</html>
