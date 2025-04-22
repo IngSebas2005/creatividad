@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mensajes Ultra Creativos</title>
+  <title>Mensajes para Ella</title>
   <link rel="stylesheet" href="styles.css">
 
   <!-- Fuentes -->
@@ -17,10 +17,10 @@
   <canvas id="tsparticles"></canvas>
   <div class="card">
     <div class="header">
-      <div class="title">¡Hola, ñiña! 🌟</div>
+      <div class="title">Para ti, niña de luz ✨</div>
     </div>
     <progress id="barra" value="0" max="100"></progress>
-    <div id="frase">Pulsa el botón para tu dosis de buena vibra ✨</div>
+    <div id="frase">Pulsa el botón para descubrir algo bonito... 🌷</div>
     <div class="buttons">
       <button id="nextBtn">Siguiente</button>
     </div>
@@ -42,15 +42,15 @@
       detectRetina: true
     });
 
-    const frases = [
-      'Brillas por ti misma. Nadie te opaca; tu presencia impone mucho. ✨',
-      'No es que me cueste impresionarme… todo era predecible, hasta que apareciste tú. 😮',
-      'Aunque no estés cerca, te recuerdo. Esa es la diferencia entre tú y las demás. 💭',
-      'Te distraes con detalles, pero sé que es porque quieres que todo salga perfecto. 💯',
-      'Te lastimaron antes, y sigues adelante, más fuerte que nunca… eres admirable. 💪❤️',
-      'Hablas poco, callas mucho. Ese silencio te hace impredecible y fascinante. 🤫✨',
-      'No necesitas destacar. Hay auras que brillan en silencio, y la tuya lo hace. 🌟',
-      'No vine a cambiar tu día… pero si lo hice, fue sin querer. O tal vez no mucho. 😉'
+    const frases = [ 
+      'Tu mirada no necesita palabras, ya lo dice todo: calma, fuego y un mundo que quiero explorar contigo 🔥💫.',
+      'Tienes ese tipo de belleza que no intenta impresionar, pero lo logra sin esfuerzo… como si tu esencia hablara primero ✨.',
+      'No sé qué me gustó más: tu mirada que envuelve o esa paz que llevas en el rostro, como si hubieras nacido para sanar 🕊️.',
+      'Tu cabello cae como versos… y cada hebra parece escrita por el viento que quiere quedarse a tu lado 🍃📖.',
+      'Hay luz en ti. No me refiero al brillo de tus ojos, sino a la forma en que iluminas sin querer cada rincón donde estás ☀️.',
+      'Podría describirte con mil palabras, pero ninguna sería tan precisa como lo que siento cuando simplemente… sonríes 😊.',
+      'Tu aura es tan suave que desarma, tan intensa que se queda. No hay forma de mirarte y no querer volver 💭💘.',
+      'Dicen que lo verdadero se siente sin aviso… y contigo, todo comenzó sin que yo me diera cuenta 🫀🌀.'
     ];
 
     let idx = -1;
@@ -72,7 +72,7 @@
 
       if (idx >= frases.length - 1) {
         nextBtn.disabled = true;
-        nextBtn.innerText = '¡Listo! 🎉';
+        nextBtn.innerText = 'Eso era todo 💌';
         nextBtn.style.opacity = '0.6';
         nextBtn.style.cursor = 'default';
       }
